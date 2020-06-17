@@ -3,7 +3,7 @@ import { ApolloLink } from 'apollo-link';
 import formatMessage from './formatMessage';
 import logging from './logging';
 
-export const createLoggerLink = ({ stringify = false }) =>
+export const createLoggerLink = ({ stringify = false, logger }) =>
   new ApolloLink((operation, forward) => {
     const startTime = new Date().getTime();
 
@@ -13,12 +13,18 @@ export const createLoggerLink = ({ stringify = false }) =>
 
       const group = formatMessage(operationType, operation, ellapsed);
 
-      logging.groupCollapsed(...group);
+      (logger || logging).groupCollapsed(...group);
 
-      logging.log('INIT', stringify ? JSON.stringify(stringify) : operation);
-      logging.log('RESULT', stringify ? JSON.stringify(result) : result);
+      (logger || logging).log(
+        'INIT',
+        stringify ? JSON.stringify(stringify) : operation,
+      );
+      (logger || logging).log(
+        'RESULT',
+        stringify ? JSON.stringify(result) : result,
+      );
 
-      logging.groupEnd(...group);
+      (logger || logging).groupEnd(...group);
       return result;
     });
   });

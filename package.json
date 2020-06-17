@@ -1,8 +1,8 @@
 {
-  "name": "apollo-link-logger",
-  "version": "0.0.0-development",
+  "name": "@karszawa/apollo-link-logger",
+  "version": "0.0.1",
   "description": "Logger for Apollo Link that uses a similar format to redux-logger. Includes performance information.",
-  "author": "Adrian Perez adrian@adrianperez.org",
+  "author": "Hiroaki KARASAWA karszawa@gmail.com",
   "license": "MIT",
   "module": "es/index.js",
   "main": "lib/index.js",
