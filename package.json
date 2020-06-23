@@ -1,9 +1,12 @@
 {
   "name": "@karszawa/apollo-link-logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Logger for Apollo Link that uses a similar format to redux-logger. Includes performance information.",
   "author": "Hiroaki KARASAWA karszawa@gmail.com",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "module": "es/index.js",
   "main": "lib/index.js",
   "engines": {
@@ -90,6 +93,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/blackxored/apollo-link-logger.git"
+    "url": "https://github.com/karszawa/apollo-link-logger.git"
   }
 }
